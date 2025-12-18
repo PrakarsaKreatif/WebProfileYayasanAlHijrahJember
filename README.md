@@ -10,3 +10,8 @@ npm install
 ```bash
 npx astro sync
 ```
+3. Run Dev Mode
+```bash
+npm run dev
+```
+4. Open at http://localhost:4321
