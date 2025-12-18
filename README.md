@@ -1,6 +1,6 @@
 # Web Profile Yayasan Al-Hijrah Jember
 
-##Setup
+## Setup
 ---
 1. Install Depencies
 ```bash
