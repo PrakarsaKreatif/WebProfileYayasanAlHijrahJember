@@ -7,7 +7,9 @@ export default {
 				'red': '#FF6766',
             'yellow': '#FFC000',
             'blue': '#1AB8FF',
-            'green': '#2CB276'
+            'green': '#2CB276',
+				'black': '#000000',
+				'white': '#FFFFFF'
 			},
          fontFamily: {
             'poppins': ['Poppins', 'sans-serif'],

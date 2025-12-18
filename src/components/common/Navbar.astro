@@ -1,3 +1,53 @@
-<nav class="bg-blue-600 text-white p-4">
-  <div class="container mx-auto font-bold">Navbar Placeholder</div>
+---
+import { Image } from 'astro:assets';
+import logoIcon from '../../assets/icons/logo.svg';
+---
+
+<nav class="w-full bg-white shadow-md font-poppins sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="flex items-center gap-2">
+        <Image 
+          src={logoIcon} 
+          alt="Logo Al Hijrah" 
+          class="w-12 h-12 rounded-full" 
+        />
+      </div>
+      
+      <span class="text-green text-2xl font-bold tracking-wide uppercase">
+        AL HIJRAH
+      </span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-8">
+      
+      <div class="flex gap-6 text-black font-medium">
+        <a href="/" class="hover:text-green transition-colors">Home</a>
+        <a href="/prestasi" class="hover:text-green transition-colors">Prestasi</a>
+        <a href="/galeri" class="hover:text-green transition-colors">Galeri</a>
+      </div>
+
+      <div class="flex gap-3">
+        <a href="/tk-kb" class="bg-red text-white px-6 py-2 rounded-full font-semibold shadow-sm hover:opacity-90 transition-opacity">
+          TK&KB
+        </a>
+
+        <a href="/tpa" class="bg-yellow text-white px-6 py-2 rounded-full font-semibold shadow-sm hover:opacity-90 transition-opacity">
+          TPA
+        </a>
+
+        <a href="/pendaftaran" class="bg-green text-white px-6 py-2 rounded-full font-semibold shadow-sm hover:opacity-90 transition-opacity">
+          Pendaftaran
+        </a>
+      </div>
+
+    </div>
+
+    <button class="md:hidden text-black focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </div>
 </nav>
