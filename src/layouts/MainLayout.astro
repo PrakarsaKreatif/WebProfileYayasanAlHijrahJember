@@ -8,27 +8,28 @@ const { title = "Yayasan Al-Hijrah" } = Astro.props;
 
 <!doctype html>
 <html lang="id">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-		
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="generator" content={Astro.generator} />
+      
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+      
       <title>{title} | Yayasan Al-Hijrah Jember</title>
-	</head>
-	
-    <body class="flex flex-col min-h-screen bg-gray-50 text-gray-900 font-sans">
-		
+   </head>
+   
+   <body class="flex flex-col min-h-screen bg-gray-50 text-gray-900 font-poppins">
+      
         <Navbar />
 
         <main class="flex-grow container mx-auto px-4 py-8">
             <slot />
-		</main>
+        </main>
 
         <Footer />
         
-	</body>
+   </body>
 </html>
