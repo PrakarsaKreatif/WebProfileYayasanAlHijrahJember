@@ -1,0 +1,56 @@
+---
+import Container from './common/Container.astro';
+
+const imageFiles = import.meta.glob('/src/assets/images/*.{jpg,jpeg,png,webp}', { eager: true });
+
+const galleryImages = Object.values(imageFiles).map((img: any) => img.default.src);
+---
+
+<section class="py-16 bg-[#F0FDF9]"> <Container>
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-emerald-500 mb-2">Galeri Kegiatan</h2>
+        <p class="text-gray-600">Intip keseruan kegiatan belajar dan bermain kami</p>
+    </div>
+
+    <swiper-container
+      class="mySwiper w-full h-full"
+      slides-per-view="auto"
+      space-between="24"
+      loop="true"
+      autoplay-delay="1500"
+      autoplay-disable-on-interaction="false"
+      breakpoints='{"320": {"slidesPerView": 1.5, "spaceBetween": 16}, "768": {"slidesPerView": 3, "spaceBetween": 20}, "1024": {"slidesPerView": 4, "spaceBetween": 24}}'
+    >
+      {galleryImages.map((src, index) => (
+        <swiper-slide class="h-auto">
+          <div class="rounded-2xl overflow-hidden shadow-md h-64 w-full bg-gray-200">
+             <img 
+               src={src} 
+               alt={`Galeri Kegiatan ${index + 1}`} 
+               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" 
+               loading="lazy"
+             />
+          </div>
+        </swiper-slide>
+      ))}
+    </swiper-container>
+
+    <div class="text-center mt-12">
+      <a href="/galeri" class="inline-block bg-[#25D366] text-white font-bold py-3 px-10 rounded-full shadow-lg hover:bg-emerald-600 transition-colors cursor-pointer">
+        Lihat Galeri Kami
+      </a>
+   </div>
+  </Container>
+</section>
+
+<script>
+  import { register } from 'swiper/element/bundle';
+  register();
+</script>
+
+<style>
+  swiper-slide {
+    height: auto;
+    display: flex;
+  }
+</style>

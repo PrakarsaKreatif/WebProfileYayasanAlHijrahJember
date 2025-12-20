@@ -1,17 +1,20 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
+import Layout from '../layouts/MainLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ServicesSection from '../components/ServicesSection.astro';
+import ConceptsSection from '../components/ConceptsSection.astro';
+import RegistrationSection from '../components/RegistrationSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import GallerySection from '../components/GallerySection.astro';
 ---
 
-<MainLayout title="Beranda">
-  <div class="flex flex-col items-center justify-center h-[80vh] text-center px-4">
-    
-    <h1 class="text-5xl font-bold text-gray-800 mb-4">
-      Hello World! 👋
-    </h1>
-    
-    <p class="text-xl text-gray-600">
-      Website Profil Yayasan Al-Hijrah Jember is under construction.
-    </p>
-
-  </div>
-</MainLayout>
+<Layout title="Yayasan Al-Hijrah Jember">
+	<main>
+		<HeroSection />
+    <ServicesSection />
+    <ConceptsSection />
+    <RegistrationSection />
+    <ContactSection />
+    <GallerySection />
+	</main>
+</Layout>

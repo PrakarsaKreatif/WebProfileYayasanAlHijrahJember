@@ -3,11 +3,11 @@ import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
 import '../styles/global.css';
 
-const { title = "Yayasan Al-Hijrah" } = Astro.props;
+const { title = "Yayasan Al-Hijrah", fullWidth = false } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
    <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width" />
@@ -21,15 +21,23 @@ const { title = "Yayasan Al-Hijrah" } = Astro.props;
       <title>{title} | Yayasan Al-Hijrah Jember</title>
    </head>
    
-   <body class="flex flex-col min-h-screen bg-gray-50 text-gray-900 font-poppins">
+   <body class="flex flex-col min-h-screen bg-[#E0F4EB] text-gray-900 font-poppins">
       
-        <Navbar />
+      <div class="w-full bg-white shadow-sm sticky top-0 z-50">
+         <container>
+            <Navbar />
+         </container>
+      </div>
 
-        <main class="flex-grow container mx-auto px-4 py-8">
-            <slot />
-        </main>
+      <main class="flex-grow w-full">
+         <slot />
+      </main>
 
-        <Footer />
+       <div class="w-full bg-white border-t mt-auto">
+           <container>
+               <Footer />
+           </container>
+       </div>
         
    </body>
 </html>

@@ -1,0 +1,61 @@
+---
+const imageFiles = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png}', { eager: true });
+const imageList = Object.values(imageFiles).map((img: any) => {
+  return img.default.src || img.default;
+});
+const heroImage = imageList[0]; 
+---
+
+<section class="w-full py-16 md:py-24 bg-white">
+  <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      
+      <div class="order-2 md:order-1">
+        <h1 class="text-3xl md:text-5xl font-bold text-emerald-500 mb-6 leading-tight">
+          Yayasan <br />
+          AL-Hijrah Jember
+        </h1>
+        <p class="text-gray-600 text-justify md:text-left mb-8 leading-relaxed">
+          Yayasan Al Hijrah Jember merupakan lembaga yang berdedikasi penuh dalam 
+          memberikan layanan pendidikan dan pengasuhan anak usia dini yang berkualitas. 
+          Kami berkomitmen untuk mencetak generasi yang cerdas, kritis, dan berkarakter 
+          melalui pendekatan modern yang seimbang dengan nilai-nilai pengasuhan.
+        </p>
+        <a href="#pendaftaran" class="inline-block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 px-8 rounded-full transition-all shadow-md">
+          Pendaftaran
+        </a>
+      </div>
+
+      <div class="order-1 md:order-2 flex justify-center md:justify-end">
+        <div class="rounded-[2.5rem] overflow-hidden shadow-xl w-full max-w-lg">
+          <img id="hero-image" src={heroImage} alt="Yayasan Al Hijrah" class="w-full h-auto object-cover aspect-[4/3] transition-opacity duration-500 opacity-100 block" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ images: imageList, intervalTime: 2000 }}>
+  let currentIndex = 0;
+  const heroImageElement = document.getElementById('hero-image');
+
+  function cycleImage() {
+    if (!heroImageElement || images.length <= 1) return;
+
+    heroImageElement.classList.remove('opacity-100');
+    heroImageElement.classList.add('opacity-0');
+
+    setTimeout(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      heroImageElement.src = images[currentIndex];
+      
+      heroImageElement.classList.remove('opacity-0');
+      heroImageElement.classList.add('opacity-100');
+    }, 500);
+  }
+
+  if (images.length > 1) {
+    setInterval(cycleImage, intervalTime);
+  }
+</script>

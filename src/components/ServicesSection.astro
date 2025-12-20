@@ -1,0 +1,47 @@
+---
+const imgTK = "../../src/assets/images/hut_ri.jpg";
+const imgTPA = "../../src/assets/images/hut_ri.jpg";
+---
+
+<section class="py-20 bg-[#F0FDF9]">
+  <div class="max-w-[1200px] mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-emerald-500 mb-2">Layanan Kami</h2>
+      <p class="text-gray-600">Yayasan Al-Hijrah memiliki 2 layanan pendidikan.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      
+      <div class="bg-[#FF6B6B] rounded-[2.5rem] p-8 text-center text-white shadow-lg flex flex-col items-center">
+        <div class="w-48 h-48 rounded-full border-[5px] border-white overflow-hidden mb-6 shadow-md">
+          <img src={imgTK} alt="TK KB Al Hijrah" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="text-2xl font-bold mb-4">TK & KB Al-Hijrah</h3>
+        <p class="text-sm leading-relaxed text-justify mb-8 grow">
+          KB-TK Al Hijrah senantiasa mengutamakan proses belajar yang berpusat pada anak. 
+          Dengan berpedoman pada Kurikulum Merdeka dan Kurikulum khas Al Hijrah, 
+          pembelajaran dilaksanakan melalui pendekatan Deep Learning dan Computational Thinking.
+        </p>
+        <button class="bg-white text-[#FF6B6B] font-bold py-3 px-12 rounded-full hover:bg-gray-100 transition shadow">
+          Selengkapnya
+        </button>
+      </div>
+
+      <div class="bg-[#FFC107] rounded-[2.5rem] p-8 text-center text-white shadow-lg flex flex-col items-center">
+        <div class="w-48 h-48 rounded-full border-[5px] border-white overflow-hidden mb-6 shadow-md">
+          <img src={imgTPA} alt="TPA Al Hijrah" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="text-2xl font-bold mb-4">TPA Al-Hijrah</h3>
+        <p class="text-sm leading-relaxed text-justify mb-8 grow">
+          Merupakan taman pengasuhan yang difungsikan untuk membantu orangtua dalam mengasuh anak 
+          yang dilakukan pada hari Senin - Jum'at, pukul 07.00 - 16.00 WIB. Layanan meliputi pendidikan, 
+          pengasuhan, dan makan minum sehari-hari.
+        </p>
+        <button class="bg-white text-[#FFC107] font-bold py-3 px-12 rounded-full hover:bg-gray-100 transition shadow">
+          Selengkapnya
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
