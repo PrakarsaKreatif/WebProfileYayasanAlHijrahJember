@@ -1,0 +1,57 @@
+---
+    import Layout from '../layouts/MainLayout.astro';
+    import Card from '../components/card/galeriCard.astro'
+
+    import tahfidzImg from '../assets/images/ekskul_tahfidz.jpeg'
+    import englishImg from '../assets/images/english_club.jpeg'
+    import drumbandImg from '../assets/images/drumband_putra.jpeg'
+    import gymnasticImg from '../assets/images/ekskul_gymnastic.jpeg'
+    import mewarnaiImg from '../assets/images/ekskul_mewarnai.jpeg'
+    import tariImg from '../assets/images/ekskul_tari.jpeg'
+    import hutImg from '../assets/images/hut_ri.jpg'
+    import iduladhaImg from '../assets/images/idul_adha.jpeg'
+    import kirabImg from '../assets/images/kirab.jpeg'
+    import manasikImg from '../assets/images/manasik.jpeg'
+    import sholatImg from '../assets/images/sholat.jpeg'
+    import parentingImg from '../assets/images/parenting.jpeg'
+    import upacaraImg from '../assets/images/upacara.jpeg'
+    import senamImg from '../assets/images/senam.jpeg'
+
+    const pageTitle = "Galeri TK & KB Al Hijrah";
+    const pageSubtitle = "Berikut Galeri Kegiatan TK & KB Al Hijrah";
+---
+
+<Layout title={pageTitle}>
+    <section class="max-w-4xl mx-auto pt-8 md:pt-12 pb-12 px-4 text-center">
+        <div class="w-full aspect-video bg-gray-200 rounded-3xl mb-8 flex items-center justify-center border-2 border-dashed border-gray-300">
+            <span class="text-gray-400 font-medium text-lg">
+                PLACEHOLDER IMAGE
+            </span>
+        </div>
+        <h1 class="text-2xl md:text-[32px] font-bold text-[#10B981] mb-2 leading-tight md:leading-[40px]">
+            {pageTitle}
+        </h1>
+        <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto px-2">
+            {pageSubtitle}
+        </p>
+    </section>
+
+    <section class="bg-[#10B981]/10 pt-8 pb-16 px-4">
+        <div class="mx-16 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <Card image={tahfidzImg} text="Ekstrakurikuler Tahfidz"/>
+            <Card image={englishImg} text="Ekstrakurikuler English Club"/>
+            <Card image={drumbandImg} text="Ekstrakurikuler Drumband"/>
+            <Card image={mewarnaiImg} text="Ekstrakurikuler Mewarnai"/>
+            <Card image={tariImg} text="Ekstrakurikuler Tari"/>
+            <Card image={gymnasticImg} text="Ekstrakurikuler Gymnastic"/>
+            <Card image={kirabImg} text="Kirab Budaya"/>
+            <Card image={iduladhaImg} text="Latihan Berkurban"/>
+            <Card image={parentingImg} text="Kegiatan Parenting"/>
+            <Card image={manasikImg} text="Manasik Haji"/>
+            <Card image={hutImg} text="Memperingati HUT RI ke 80"/>
+            <Card image={upacaraImg} text="Kegiatan Upacara"/>
+            <Card image={senamImg} text="Kegiatan Senam Pagi"/>
+            <Card image={sholatImg} text="Kegiatan Sholat Berjamaah"/>
+        </div>
+    </section>
+</Layout>

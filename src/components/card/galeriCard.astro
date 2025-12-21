@@ -1,0 +1,10 @@
+---
+    const {image, text} = Astro.props
+---
+
+<div class="h-auto bg-white rounded-xl overflow-hidden flex-wrap">
+    <img src={image.src} class="w-full h-[304px] object-cover">
+    <div class="flex items-center justify-center h-[120px]">
+        <h1 class="font-semibold text-3xl text-center text-green w-1/2 mx-auto">{text}</h1>
+    </div>
+</div>
