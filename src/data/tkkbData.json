@@ -1,0 +1,61 @@
+{
+  "pageTitle": "TK & KB Al Hijrah Jember",
+  "pageSubtitle": "Berikut informasi lebih detail terkait TK & KB Al Hijrah",
+  "deskripsi": "Dalam pengembangan pembelajaran, KB-TK Al Hijrah senantiasa mengutamakan proses belajar yang berpusat pada anak. Dengan berpedoman pada Kurikulum Merdeka dan Kurikulum khas Al Hijrah, pembelajaran dilaksanakan melalui pendekatan Deep Learning dan Computational Thinking. Melalui pendekatan ini, diharapkan anak-anak mampu mengembangkan kemampuan berpikir kritis, memecahkan masalah secara logis, sistematis, dan kreatif sesuai dengan tahapan usianya. Fokus pengembangan pembelajaran di KB-TK Al Hijrah disesuaikan dengan karakteristik pertumbuhan dan perkembangan anak usia dini. Kami menanamkan pondasi nilai-nilai Islam, membentuk ketangguhan fisik dan motorik, menumbuhkan kesiapan emosi, serta mengasah keterampilan berkomunikasi, kemandirian, dan kreativitas. Dengan demikian, anak-anak Al Hijrah tumbuh menjadi generasi yang berakhlak mulia, percaya diri, dan berwawasan global.",
+  "visi": "Mewujudkan pendidikan berkualitas yang berlandaskan nilai-nilai agama dan menumbuhkan cara berpikir kritis sehingga membentuk peserta didik yang berakhlak mulia, kreatif, mandiri, sehat serta mampu berkolaborasi",
+  "misi": [
+    "Menanamkan pendidikan agama sejak dini",
+    "Melatih sikap dan prilaku yang islami",
+    "Melatih dan membiasakan beribadah",
+    "Menanamkan kemampuan berpikir kritis sejak dini melalui kegiatan belajar",
+    "Mengembangkan kreativitas anak melalui kegiatan bermain yang bermakna",
+    "Menanamkan kemandirian untuk melatih keterampilan hidup (life skill)",
+    "Membiasakan pola hidup bersih dan sehat",
+    "Membiasakan anak bekerjasama dan kemampuan berkomunikasi"
+  ],
+  "konsep pembelajaran": {
+    "pmi":[
+    "Kecerdasan Spiritual",
+    "Kecerdasan Naturalis",
+    "Kecerdasan Linguistik",
+    "Kecerdasan Visual",
+    "Kecerdasan Kinestetik",
+    "Kecerdasan Logis Matematis",
+    "Kecerdasan Inter & Intra Personal"
+    ],
+    "pa": [
+        "Pembiasaan sholat dhuha berjama'ah",
+        "Infak dhuha setiap hari",
+        "Hafalan hadist, surat-surat pendek dan doa sehari-hari",
+        "Jum'at berkah (Bersholawat Bersama, Bermaaf-maafan, Potong Kuku, Berbagi Nasi Jum'at di Masjid)",
+        "Pembiasaan sholat fardhu",
+        "Pembiasaan cuci tangan"
+    ],
+    "ke": {
+        "inti": [
+            "Tahfidz",
+            "Mewarnai",
+            "Tari",
+            "English Club",
+            "Olympiade (Coming Soon)",
+            "Angklung (Coming Soon)"
+        ],
+        "pilihan": [
+          "Drumband",
+          "Color Guard"
+        ]
+    }
+  },
+  "program penunjang": [
+    "Tes Multiple Intelegensi/Tes Kecerdasan",
+    "Home Visit",
+    "Bimbingan Konseling",
+    "Family Gathering",
+    "Program Parenting",
+    "Makan Sehat Bersama",
+    "Manasik Haji",
+    "Outbound, Berenang, Cooking Class, Marketday",
+    "Indoor/Outdoor Activity Berbasis Tema (Puncak Tema)"
+  ]
+
+}

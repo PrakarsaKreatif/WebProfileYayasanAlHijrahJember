@@ -7,27 +7,24 @@ import RegistrationSection from '../components/RegistrationSection.astro';
 // Import Data JSON
 import tpaData from '../data/tpaData.json';
 
-// Import Assets Icons (Visi & Misi)
-
-const { pageTitle } = tpaData;
 ---
 
-<Layout title={pageTitle}>
+<Layout title>
     
-    <section class="max-w-4xl mx-auto pt-12 pb-12 text-center">
-      <div class="w-full aspect-video rounded-3xl mb-8 overflow-hidden relative">
-      <Image 
-         src={hutRiImg} 
-         alt="Perayaan HUT RI"
-         class="w-full h-full object-cover" 
-      />
-      </div>
+    <section class="max-w-4xl mx-auto pt-12 pb-12 text-center px-4 md:px-6">
+        <div class="w-full aspect-video rounded-3xl mb-6 md:mb-8 overflow-hidden relative">
+            <Image 
+                src={hutRiImg} 
+                alt="Perayaan HUT RI"
+                class="w-full h-full object-cover" 
+            />
+        </div>
 
-        <h1 class="text-3xl md:text-4xl font-bold text-green mb-2">
-            {pageTitle}
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green mb-2 px-4">
+            Pendaftaran TK & KB Al Hijrah
         </h1>
-        <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto">
-            Berikut informasi lebih detail terkait Pendaftaran TK & KB Al Hijrah
+        <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto px-4">
+           Berikut informasi lebih detail terkait<br\>Pendaftaran TK & KB Al Hijrah
         </p>
     </section>
 
