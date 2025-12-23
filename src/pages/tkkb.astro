@@ -14,7 +14,13 @@ import clockIcon from '../assets/icons/greenClock.svg'
 import calendarIcon from '../assets/icons/calendar.svg'
 import clock from '../assets/icons/clock.svg'
 
-import hutRiImg from '../assets/images/hut_ri.jpg';
+import multiIntel from '../../src/assets/icons/multiple_intelegensi.svg';
+import penAqidah from '../../src/assets/icons/penanaman_aqidah.svg';
+import kegEkstra from '../../src/assets/icons/kegiatan_ekstrakurikuler.svg';
+
+const icMulti = multiIntel.src;
+const icAqidah = penAqidah.src;
+const icEkstra = kegEkstra.src;
 
 const { 
   pageTitle, 
@@ -112,8 +118,8 @@ const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src
         </div>
 
         <div class="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <div class="bg-[#FF6B6B] rounded-2xl md:rounded-[2rem] p-5 md:p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition">
-                <img src="../../src/assets/icons/multiple_intelegensi.svg" alt="Multiple Intelegensi Al Hijrah" class="w-16 md:w-20 mb-2" />
+            <div class="bg-red rounded-2xl md:rounded-[2rem] p-5 md:p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition">
+                <img src={icMulti} alt="Multiple Intelegensi Al Hijrah" class="w-16 md:w-20 mb-2" />
                 <h3 class="text-base md:text-lg font-bold mb-3 md:mb-4 text-center">Pembelajaran<br/>Multiple Intelegensi</h3>
                 <ul class="w-full text-left text-sm md:text-base space-y-1 opacity-90">
                 {pmi.map((item) => (
@@ -122,8 +128,8 @@ const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src
                 </ul>
             </div>
 
-            <div class="bg-[#FFC107] rounded-2xl md:rounded-[2rem] p-5 md:p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition">
-                <img src="../../src/assets/icons/penanaman_aqidah.svg" alt="Penanaman Aqidah Al Hijrah" class="w-16 md:w-20 mb-2" />
+            <div class="bg-yellow rounded-2xl md:rounded-[2rem] p-5 md:p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition">
+                <img src={icAqidah} alt="Penanaman Aqidah Al Hijrah" class="w-16 md:w-20 mb-2" />
                 <h3 class="text-base md:text-lg font-bold mb-3 md:mb-4 text-center">Penanaman<br/>Aqidah</h3>
                 <ul class="w-full text-left text-sm md:text-base space-y-1 opacity-90">
                 {pa.map((item) => (
@@ -132,8 +138,8 @@ const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src
                 </ul>
             </div>
 
-            <div class="bg-[#0EA5E9] rounded-2xl md:rounded-[2rem] p-5 md:p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition">
-                <img src="../../src/assets/icons/kegiatan_ekstrakurikuler.svg" alt="Ekstrakurikuler Al Hijrah" class="w-16 md:w-20 mb-2" />
+            <div class="bg-blue rounded-2xl md:rounded-[2rem] p-5 md:p-6 text-white flex flex-col items-center shadow-lg hover:-translate-y-1 transition">
+                <img src={icEkstra} alt="Ekstrakurikuler Al Hijrah" class="w-16 md:w-20 mb-2" />
                 <h3 class="text-base md:text-lg font-bold mb-3 md:mb-4 text-center">Kegiatan<br/>Ekstrakurikuler</h3>
                 <h3 class="text-sm md:text-base font-bold text-left w-full">Ekstrakurikuler Inti</h3>
                 <ul class="w-full text-left text-sm md:text-base space-y-1 opacity-90">
