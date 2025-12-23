@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
+import PageBanner from '../components/common/PageBanner.astro';
+
 import {Image} from 'astro:assets';
 
 // Import Data JSON
@@ -26,20 +28,22 @@ const {
 
 const { pmi, pa, ke } = konsepPembelajaran;
 const {inti, pilihan} = ke;
+
+const imageFiles = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,webp}', { eager: true });
+const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src);
 ---
 
 <Layout title={pageTitle}>
     
-    <section class="max-w-4xl mx-auto pt-12 pb-12 text-center px-4 md:px-6">
+    <section class="max-w-4xl mx-auto pt-12 pb-1 text-center px-4 md:px-6">
         <div class="w-full aspect-video rounded-3xl mb-6 md:mb-8 overflow-hidden relative">
-            <Image 
-                src={hutRiImg} 
-                alt="Perayaan HUT RI"
-                class="w-full h-full object-cover" 
+            <PageBanner 
+                title="Galeri Kegiatan Kami" 
+                images={bannerImages}
             />
         </div>
 
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green mb-2 px-4">
+        <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green px-4">
             {pageTitle}
         </h1>
         <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto px-4">
@@ -236,7 +240,5 @@ const {inti, pilihan} = ke;
             </div>
         </div>
         </div>
-
-
     </section>
 </Layout>

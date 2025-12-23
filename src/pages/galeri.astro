@@ -1,9 +1,6 @@
 ---
     import Layout from '../layouts/MainLayout.astro';
     import Card from '../components/card/galeriCard.astro'
-
-    import { Image } from "astro:assets";
-
     import tahfidzImg from '../assets/images/ekskul_tahfidz.jpeg'
     import englishImg from '../assets/images/english_club.jpeg'
     import drumbandImg from '../assets/images/drumband_putra.jpeg'
@@ -18,7 +15,11 @@
     import parentingImg from '../assets/images/parenting.jpeg'
     import upacaraImg from '../assets/images/upacara.jpeg'
     import senamImg from '../assets/images/senam.jpeg'
-    import pialaIcon from "../assets/images/Piala.png";
+
+    import PageBanner from '../components/common/PageBanner.astro';
+
+    const imageFiles = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,webp}', { eager: true });
+    const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src);
 
     const pageTitle = "Galeri TK & KB Al Hijrah";
     const pageSubtitle = "Berikut Galeri Kegiatan TK & KB Al Hijrah";
@@ -26,13 +27,10 @@
 
 <Layout title={pageTitle}>
     <section class="max-w-4xl mx-auto pt-12 pb-12 text-center px-4 md:px-6">
-        <div class="w-full aspect-video rounded-3xl mb-6 md:mb-8 overflow-hidden relative">
-            <Image 
-                src={pialaIcon} 
-                alt="Foto Prestasi Utama"
-                class="w-full h-full object-cover" 
-            />
-        </div>
+        <PageBanner 
+            title="Galeri Kegiatan Kami" 
+            images={bannerImages}
+        />
 
         <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-green mb-2 px-4">
             {pageTitle}
@@ -42,8 +40,8 @@
         </p>
     </section>
 
-    <section class="bg-[#10B981]/10 pt-8 pb-16 px-4">
-        <div class="mx-8 lg:mx-16 grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+    <section class="bg-[#10B981]/10 pt-8 pb-16 px-4 ">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-4xl mx-auto">
             <Card image={tahfidzImg} text="Ekstrakurikuler Tahfidz"/>
             <Card image={englishImg} text="Ekstrakurikuler English Club"/>
             <Card image={drumbandImg} text="Ekstrakurikuler Drumband"/>

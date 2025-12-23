@@ -1,7 +1,15 @@
+---
+import lokasi from '../../src/assets/icons/lokasi.svg';
+import whatsapp from '../../src/assets/icons/whatsapp.svg';
+
+const icLocation = lokasi.src;
+const icWa = whatsapp.src;
+---
+
 <section class="py-16 px-4 bg-white">
   <div class="max-w-[1000px] mx-auto">
     <div class="text-center mb-10">
-      <h2 class="text-3xl font-bold text-emerald-500">Lokasi & Kontak Kami</h2>
+      <h2 class="text-3xl font-bold text-green">Lokasi & Kontak Kami</h2>
       <p class="text-gray-600">Berikut lokasi dan kontak yang dapat anda hubungi</p>
     </div>
 
@@ -16,16 +24,16 @@
 
         <div class="space-y-4">
           <div class="bg-white p-4 rounded-xl shadow-sm flex items-start gap-3">
-             <img src="../../src/assets/icons/lokasi.svg" alt="Usia Anak" class="w-10" />
+             <img src={icLocation} alt="Usia Anak" class="w-10" />
              <div>
                <p class="font-bold text-gray-800">Jl. Jawa II No.22</p>
                <p class="text-sm text-gray-500 mb-2">Jl. Jawa II No.22, Tegal Boto Lor, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur</p>
-               <a href="https://maps.app.goo.gl/XFqP47qzyiGdANZC9" class="mt-10 bg-emerald-500 text-white text-xs px-4 py-2 rounded-full hover:bg-emerald-600">Lihat di Google Maps</a>
+               <a href="https://maps.app.goo.gl/XFqP47qzyiGdANZC9" class="mt-10 bg-green text-white text-xs px-4 py-2 rounded-full hover:bg-emerald-600">Lihat di Google Maps</a>
              </div>
           </div>
 
           <a href="https://wa.me/62895806789928" class="flex items-center gap-3 bg-[#25D366] text-white p-4 rounded-xl shadow-md hover:bg-[#20bd5a] transition">
-            <img src="../../src/assets/icons/whatsapp.svg" alt="Whatsapp Al Hijrah" class="w-10" />
+            <img src={icWa} alt="Whatsapp Al Hijrah" class="w-10" />
             <div>
               <p class="text-xs opacity-90">WhatsApp</p>
               <p class="font-bold text-lg">Bu Inge</p>
@@ -33,7 +41,7 @@
           </a>
 
           <a href="https://wa.me/62895806789927" class="flex items-center gap-3 bg-[#25D366] text-white p-4 rounded-xl shadow-md hover:bg-[#20bd5a] transition">
-            <img src="../../src/assets/icons/whatsapp.svg" alt="Whatsapp Al Hijrah" class="w-10" />
+            <img src={icWa} alt="Whatsapp Al Hijrah" class="w-10" />
             <div>
               <p class="text-xs opacity-90">WhatsApp</p>
               <p class="font-bold text-lg">Mom Uci</p>

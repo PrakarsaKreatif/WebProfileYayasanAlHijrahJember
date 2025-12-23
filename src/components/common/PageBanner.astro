@@ -1,0 +1,58 @@
+---
+interface Props {
+  title?: string;       // Judul halaman (opsional)
+  images: string[];     // Array URL gambar (Wajib)
+  heightClass?: string; // Tinggi banner (Default: h-64 di HP, h-96 di Desktop)
+}
+
+const { 
+  title, 
+  images, 
+  heightClass = "h-64 md:h-100" 
+} = Astro.props;
+
+const initialImage = images.length > 0 ? images[0] : '';
+---
+<section class:list={["relative w-full h-full overflow-hidden", "mb-10"]}>
+  
+  <div class="w-full aspect-video rounded-3xl mb-6 md:mb-8 overflow-hidden relative">
+    <img 
+      id="banner-image"
+      src={initialImage}
+      alt={title || "Banner Image"}
+      class="w-full h-full object-cover transition-opacity duration-1000 opacity-100"
+    />
+    
+    <div class="absolute inset-0"></div>
+  </div>
+
+</section>
+
+<script define:vars={{ images, intervalTime: 2000 }}>
+  const bannerImageEl = document.getElementById('banner-image');
+  let currentIndex = 0;
+
+  function cycleBanner() {
+    // Cek apakah elemen ada dan gambar lebih dari 1
+    if (!bannerImageEl || images.length <= 1) return;
+
+    // 1. Fade Out (Hilangkan gambar lama)
+    bannerImageEl.classList.remove('opacity-100');
+    bannerImageEl.classList.add('opacity-0');
+
+    // 2. Tunggu 1 detik (sesuai duration-1000 di CSS)
+    setTimeout(() => {
+      // Ganti Index & Source Gambar
+      currentIndex = (currentIndex + 1) % images.length;
+      bannerImageEl.src = images[currentIndex];
+
+      // 3. Fade In (Munculkan gambar baru)
+      bannerImageEl.classList.remove('opacity-0');
+      bannerImageEl.classList.add('opacity-100');
+    }, 1000);
+  }
+
+  if (images.length > 1) {
+    setInterval(cycleBanner, intervalTime + 1000);
+  }
+</script>

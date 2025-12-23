@@ -1,7 +1,21 @@
-<section id="pendaftaran" class="py-16 px-4 bg-green/15">
+---
+import clock from '../../src/assets/icons/clock.svg';
+import calendar from '../../src/assets/icons/calendar.svg';
+import form from '../../src/assets/icons/form.svg';
+import child from '../../src/assets/icons/child.svg';
+import document from '../../src/assets/icons/document.svg';
+
+const icClock = clock.src;
+const icCalendar = calendar.src;
+const icForm = form.src;
+const icChild = child.src;
+const icDocument = document.src;
+---
+
+<section id="pendaftaran" class="py-16 px-4 bg-[#E0F4EB]">
   <div class="max-w-[1100px] mx-auto">
     <div class="text-center mb-8">
-      <h2 class="text-3xl font-bold text-emerald-500 mb-2">Informasi Pendaftaran</h2>
+      <h2 class="text-3xl font-bold text-green mb-2">Informasi Pendaftaran</h2>
       <p class="text-gray-600">Berikut informasi waktu, dan gelombang pendaftaran</p>
     </div>
 
@@ -17,13 +31,13 @@
 
           <div class="flex flex-col gap-3">
             <div class="bg-emerald-600/30 border border-white/40 text-white py-2 px-4 rounded-full inline-flex items-center gap-3 w-fit">
-              <img src="../../src/assets/icons/clock.svg" alt="Ikon Waktu" class="w-5 h-5" />
+              <img src={icClock} alt="Ikon Waktu" class="w-5 h-5" />
               <div>
                 <span class="font-bold">Senin - Jumat</span> <span class="text-sm opacity-90 ml-1">Pukul 07.00 - 12.00 WIB</span>
               </div>
             </div>
             <div class="bg-emerald-600/30 border border-white/40 text-white py-2 px-4 rounded-full inline-flex items-center gap-3 w-fit">
-              <img src="../../src/assets/icons/clock.svg" alt="Ikon Waktu" class="w-5 h-5" />
+              <img src={icClock} alt="Ikon Waktu" class="w-5 h-5" />
               <div>
                 <span class="font-bold">Sabtu</span> <span class="text-sm opacity-90 ml-1">Pukul 08.00 - 10.00 WIB</span>
               </div>
@@ -35,10 +49,10 @@
               <h4 class="font-bold text-emerald-500 text-lg mb-1">Gelombang 1</h4>
               <ul class="text-sm space-y-1">
                 <li class="flex items-start gap-2">
-                  <img src="../../src/assets/icons/calendar.svg" alt="Tanggal Pendaftaran" class="w-5 h-5" /> Desember 2024 s/d Januari 2025
+                  <img src={icCalendar} alt="Tanggal Pendaftaran" class="w-5 h-5" /> Desember 2024 s/d Januari 2025
                 </li>
                 <li class="flex items-start gap-2">
-                  <img src="../../src/assets/icons/form.svg" alt="Formulir Pendaftaran" class="w-5 h-5" /> Biaya Formulir Pendaftaran Rp 85.000
+                  <img src={icForm} alt="Formulir Pendaftaran" class="w-5 h-5" /> Biaya Formulir Pendaftaran Rp 85.000
                 </li>
               </ul>
             </div>
@@ -46,10 +60,10 @@
               <h4 class="font-bold text-emerald-500 text-lg mb-1">Gelombang 2</h4>
               <ul class="text-sm space-y-1">
                 <li class="flex items-start gap-2">
-                  <img src="../../src/assets/icons/calendar.svg" alt="Tanggal Pendaftaran" class="w-5 h-5" /> Maret 2025 s/d Juli 2025
+                  <img src={icCalendar} alt="Tanggal Pendaftaran" class="w-5 h-5" /> Maret 2025 s/d Juli 2025
                 </li>
                 <li class="flex items-start gap-2">
-                  <img src="../../src/assets/icons/form.svg" alt="Formulir Pendaftaran" class="w-5 h-5" /> Biaya Formulir Pendaftaran Rp 100.000
+                  <img src={icForm} alt="Formulir Pendaftaran" class="w-5 h-5" /> Biaya Formulir Pendaftaran Rp 100.000
                 </li>
               </ul>
             </div>
@@ -66,7 +80,7 @@
             
             <div class="bg-white rounded-2xl p-5 text-gray-700 shadow-sm">
               <div class="flex items-center gap-2 mb-2">
-                <img src="../../src/assets/icons/child.svg" alt="Usia Anak" class="w-5 h-5" />
+                <img src={icChild} alt="Usia Anak" class="w-5 h-5" />
                 <span class="font-bold text-lg">Usia Anak</span>
               </div>
               <ul class="list-disc list-inside text-sm pl-2 space-y-1">
@@ -76,13 +90,13 @@
             </div>
 
             <div class="bg-white rounded-2xl p-4 text-gray-700 shadow-sm flex items-center gap-3">
-              <img src="../../src/assets/icons/form.svg" alt="Formulir Pendaftaran" class="w-5 h-5" />
+              <img src={icForm} alt="Formulir Pendaftaran" class="w-5 h-5" />
               <span class="font-bold">Mengisi Formulir Pendaftaran</span>
             </div>
 
             <div class="bg-white rounded-2xl p-5 text-gray-700 shadow-sm">
               <div class="flex items-center gap-2 mb-2">
-                <img src="../../src/assets/icons/document.svg" alt="Dokumen Pendaftaran" class="w-5 h-5" />
+                <img src={icDocument} alt="Dokumen Pendaftaran" class="w-5 h-5" />
                 <span class="font-bold text-lg">Dokumen-Dokumen</span>
               </div>
               <ul class="list-disc list-inside text-sm pl-2 space-y-1">
@@ -96,7 +110,7 @@
       </div>
 
       <div class="mt-10 pt-6 border-t border-white/20">
-        <button class="w-full bg-white text-emerald-600 font-bold py-4 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors">
+        <button class="w-full bg-white text-green font-bold py-4 rounded-full text-lg shadow-lg hover:bg-gray-100 transition-colors">
           Daftar Sekarang
         </button>
       </div>

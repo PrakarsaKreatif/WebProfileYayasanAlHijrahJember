@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/MainLayout.astro';
-import { Image } from 'astro:assets';
-import hutRiImg from '../assets/images/hut_ri.jpg';
 import RegistrationSection from '../components/RegistrationSection.astro';
 
-// Import Data JSON
-import tpaData from '../data/tpaData.json';
+import PageBanner from '../components/common/PageBanner.astro';
+
+const imageFiles = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,webp}', { eager: true });
+const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src);
 
 ---
 
@@ -13,10 +13,9 @@ import tpaData from '../data/tpaData.json';
     
     <section class="max-w-4xl mx-auto pt-12 pb-12 text-center px-4 md:px-6">
         <div class="w-full aspect-video rounded-3xl mb-6 md:mb-8 overflow-hidden relative">
-            <Image 
-                src={hutRiImg} 
-                alt="Perayaan HUT RI"
-                class="w-full h-full object-cover" 
+            <PageBanner 
+                title="Galeri Kegiatan Kami" 
+                images={bannerImages}
             />
         </div>
 
