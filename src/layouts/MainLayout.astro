@@ -3,7 +3,14 @@ import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
 import '../styles/global.css';
 
-const { title = "Yayasan Al-Hijrah", fullWidth = false } = Astro.props;
+const { 
+   title = "Yayasan Al-Hijrah", 
+   description = "Website Resmi Yayasan KB TK Al-Hijrah Jember. Lembaga pendidikan Islam yang mencetak generasi Qurani, berakhlak mulia, dan berprestasi.",
+   image = "../assets/images/hut_ri.jpg",
+   type = "website"
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin);
 ---
 
 <!doctype html>
@@ -14,11 +21,29 @@ const { title = "Yayasan Al-Hijrah", fullWidth = false } = Astro.props;
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <meta name="generator" content={Astro.generator} />
       
+      <title>{title} | Yayasan Al-Hijrah Jember</title>
+      <meta name="description" content={description}>
+      <link rel="canonical" href={canonicalURL}>
+      <meta name="robots" content="index, follow">
+
+      <meta property="og:type" content={type}>
+      <meta property="og:url" content={canonicalURL} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={new URL(image, Astro.url)} />
+      <meta property="og:site_name" content="Yayasan Al-Hijrah Jember" />
+      <meta property="og:locale" content="id_ID" />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={canonicalURL} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={new URL(image, Astro.url)} />
+
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
       
-      <title>{title} | Yayasan Al-Hijrah Jember</title>
    </head>
    
    <body class="flex flex-col min-h-screen bg-[#FFFFFF] text-gray-900 font-poppins">
