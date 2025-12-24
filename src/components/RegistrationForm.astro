@@ -1,0 +1,470 @@
+---
+// src/components/RegistrationForm.astro
+---
+
+<div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-emerald-100">
+  
+  <h2 class="text-2xl md:text-3xl font-bold text-green mb-2 text-center">Formulir Pendaftaran</h2>
+  <p class="text-center text-gray-500 mb-8">Mohon isi data dengan lengkap dan benar.</p>
+
+  <div class="mb-8">
+    <div class="flex justify-between items-center text-xs font-semibold text-gray-500  mb-2 px-2">
+      <span class="step-label">Identitas Anak</span>
+      <span class="step-label">Data Orang Tua</span>
+      <span class="step-label">Kondisi Anak</span>
+      <span class="step-label">Pilihan SPP</span>
+    </div>
+    <div class="w-full bg-gray-200 rounded-full h-2.5">
+      <div id="progress-bar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: 25%"></div>
+    </div>
+  </div>
+  
+  <form 
+    id="multi-step-form"
+    method="POST"
+    action="https://script.google.com/macros/s/AKfycbyebRFPu_xHu9gA3aNPmnWjArRmeaJlDmnabBV5z8YQjdlMMFW60qGZR433hIA3jbg1/exec" 
+    class="space-y-6"
+  >
+
+    <div class="form-step">
+      <h3 class="text-xl font-bold text-green border-b pb-2 mb-4">A. Identitas Anak Didik</h3>
+      
+      <div class="mb-6 bg-emerald-50 p-4 rounded-xl border border-emerald-200">
+        <label class="block text-gray-800 font-bold mb-2">Pilih Kelompok Pendaftaran</label>
+        <select id="kelompok-select" name="kelompok" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-emerald-500 bg-white">
+          <option value="" disabled selected>-- Pilih Kelompok --</option>
+          <option value="KB">KB (Kelompok Bermain)</option>
+          <option value="TK">TK (Taman Kanak-Kanak)</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+          <label class="label">Nama Lengkap</label>
+          <input type="text" name="nama_lengkap" required class="input-field" />
+        </div>
+        <div>
+          <label class="label">Nama Panggilan</label>
+          <input type="text" name="nama_panggilan" required class="input-field" />
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="label">Jenis Kelamin</label>
+        <div class="flex gap-4 mt-2">
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" name="jenis_kelamin" value="Laki-laki" required class="mr-2 text-emerald-500 focus:ring-emerald-500"> Laki-laki
+          </label>
+          <label class="flex items-center cursor-pointer">
+            <input type="radio" name="jenis_kelamin" value="Perempuan" required class="mr-2 text-emerald-500 focus:ring-emerald-500"> Perempuan
+          </label>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+        <div>
+          <label class="label">Tempat Lahir</label>
+          <input type="text" name="tempat_lahir" required class="input-field" />
+        </div>
+        <div>
+          <label class="label">Tanggal Lahir</label>
+          <input type="date" name="tanggal_lahir" required class="input-field" />
+        </div>
+      </div>
+
+      <div class="mt-4 space-y-3">
+        <label class="label">Alamat Rumah Lengkap</label>
+        <input type="text" name="alamat_jalan" placeholder="Jalan / Dusun / RT RW" required class="input-field" />
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <input type="text" name="alamat_desa" placeholder="Desa/Kelurahan" required class="input-field mt-2" />
+          <input type="text" name="alamat_kecamatan" placeholder="Kecamatan" required class="input-field mt-2" />
+          <input type="text" name="alamat_kabupaten" placeholder="Kabupaten" required class="input-field mt-2" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div>
+          <label class="label">Agama</label>
+          <select name="agama" class="input-field bg-white">
+            <option value="Islam">Islam</option>
+            <option value="Kristen">Kristen</option>
+            <option value="Katolik">Katolik</option>
+            <option value="Hindu">Hindu</option>
+            <option value="Buddha">Buddha</option>
+          </select>
+        </div>
+        <div>
+          <label class="label">Kewarganegaraan</label>
+          <input type="text" name="kewarganegaraan" value="Indonesia" class="input-field" />
+        </div>
+        <div>
+          <label class="label">NIK Anak</label>
+          <input type="number" name="nik" required class="input-field" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="label">Cita-cita</label>
+          <input type="text" name="cita_cita" class="input-field" />
+        </div>
+        <div>
+          <label class="label">Hobi</label>
+          <input type="text" name="hobi" class="input-field" />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+        <div>
+          <label class="label">Anak ke-</label>
+          <input type="number" name="anak_ke" required class="input-field" />
+        </div>
+        <div>
+          <label class="label">Jumlah Saudara Kandung</label>
+          <input type="text" name="jml_sdr_kandung" placeholder="Isi - jika tdk ada" class="input-field" />
+        </div>
+        <div>
+          <label class="label">Jumlah Saudara Tiri</label>
+          <input type="text" name="jml_sdr_tiri" placeholder="Isi - jika tdk ada" class="input-field" />
+        </div>
+        <div>
+           <label class="label">Status Anak</label>
+           <select name="status_anak" class="input-field bg-white">
+             <option value="Lengkap">Ortu Lengkap</option>
+             <option value="Yatim">Yatim</option>
+             <option value="Piatu">Piatu</option>
+             <option value="Yatim Piatu">Yatim Piatu</option>
+           </select>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div>
+          <label class="label">Bahasa Sehari-hari</label>
+          <input type="text" name="bahasa_sehari" class="input-field" />
+        </div>
+        <div>
+          <label class="label">Golongan Darah</label>
+          <select name="gol_darah" class="input-field bg-white">
+            <option value="-">Tidak Tahu</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="AB">AB</option>
+            <option value="O">O</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <label class="label">Penyakit Berat yg Pernah Diderita</label>
+        <input type="text" name="penyakit_berat" placeholder="Isi - jika tidak ada" class="input-field" />
+      </div>
+       <div class="mt-4">
+        <label class="label">Imunisasi yg Pernah Diterima</label>
+        <input type="text" name="imunisasi" placeholder="Isi - jika tidak ada" class="input-field" />
+      </div>
+    </div>
+
+    <div class="form-step hidden">
+      <h3 class="text-xl font-bold text-green border-b pb-2 mb-4">B. Identitas Orangtua/Wali</h3>
+      
+      <div class="bg-gray-50 p-4 rounded-xl mb-6">
+        <h4 class="font-bold text-emerald-600 mb-3">1. Data Ayah</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div><label class="label">Nama Ayah</label><input type="text" name="ayah_nama" required class="input-field" /></div>
+            <div><label class="label">Tempat, Tgl Lahir</label><input type="text" name="ayah_ttl" required class="input-field" /></div>
+            <div><label class="label">No. HP (WA)</label><input type="number" name="ayah_hp" required class="input-field" /></div>
+            <div><label class="label">Pekerjaan</label><input type="text" name="ayah_pekerjaan" required class="input-field" /></div>
+            <div class="md:col-span-2"><label class="label">Alamat Pekerjaan</label><input type="text" name="ayah_alamat_kerja" class="input-field" /></div>
+            <div><label class="label">Pendidikan Terakhir</label><input type="text" name="ayah_pendidikan" class="input-field" /></div>
+            <div><label class="label">Penghasilan Bulanan</label><select name="ayah_penghasilan" class="input-field bg-white">
+                <option value="< 1 Juta">&lt; 1 Juta</option>
+                <option value="1 - 3 Juta">1 - 3 Juta</option>
+                <option value="3 - 5 Juta">3 - 5 Juta</option>
+                <option value="> 5 Juta">&gt; 5 Juta</option>
+            </select></div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-4 rounded-xl">
+        <h4 class="font-bold text-emerald-600 mb-3">2. Data Ibu</h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div><label class="label">Nama Ibu</label><input type="text" name="ibu_nama" required class="input-field" /></div>
+            <div><label class="label">Tempat, Tgl Lahir</label><input type="text" name="ibu_ttl" required class="input-field" /></div>
+            <div><label class="label">No. HP (WA)</label><input type="number" name="ibu_hp" required class="input-field" /></div>
+            <div><label class="label">Pekerjaan</label><input type="text" name="ibu_pekerjaan" required class="input-field" /></div>
+            <div class="md:col-span-2"><label class="label">Alamat Pekerjaan</label><input type="text" name="ibu_alamat_kerja" class="input-field" /></div>
+            <div><label class="label">Pendidikan Terakhir</label><input type="text" name="ibu_pendidikan" class="input-field" /></div>
+            <div><label class="label">Penghasilan Bulanan</label><select name="ibu_penghasilan" class="input-field bg-white">
+                <option value="< 1 Juta">&lt; 1 Juta</option>
+                <option value="1 - 3 Juta">1 - 3 Juta</option>
+                <option value="3 - 5 Juta">3 - 5 Juta</option>
+                <option value="> 5 Juta">&gt; 5 Juta</option>
+            </select></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-step hidden">
+      <h3 class="text-xl font-bold text-green border-b pb-2 mb-4">C. Kondisi Anak Didik</h3>
+      <div class="space-y-4">
+        <div>
+            <label class="label">1. Kebiasaan Baik Anak</label>
+            <textarea name="kebiasaan_baik" rows="2" class="input-field"></textarea>
+        </div>
+        <div>
+            <label class="label">2. Kebiasaan Buruk Anak</label>
+            <textarea name="kebiasaan_buruk" rows="2" class="input-field"></textarea>
+        </div>
+        <div>
+            <label class="label">3. Bakat yang Dimiliki</label>
+            <textarea name="bakat_anak" rows="2" class="input-field"></textarea>
+        </div>
+        <div>
+            <label class="label">4. Larangan Makanan & Minuman</label>
+            <textarea name="larangan_makan" rows="2" class="input-field"></textarea>
+        </div>
+        <div>
+            <label class="label">5. Penyakit yang Pernah Diderita Anak (selain batuk, pilek, panas)</label>
+            <textarea name="penyakit_lain" rows="2" class="input-field"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-step hidden">
+      <h3 class="text-xl font-bold text-green border-b pb-2 mb-4">D. Pilihan SPP Perbulan</h3>
+      
+      <div id="spp-tk" class="hidden">
+        <p class="mb-4 text-emerald-600 font-semibold">Pilihan SPP untuk kelompok <span class="font-bold underline">TK</span>:</p>
+        <div class="space-y-3">
+            <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-emerald-50 transition">
+                <input type="radio" name="pilihan_spp" value="TK - 175.000" class="mr-3 text-emerald-500 focus:ring-emerald-500 w-5 h-5">
+                <span class="font-bold">Rp 175.000</span>
+            </label>
+            <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-emerald-50 transition">
+                <input type="radio" name="pilihan_spp" value="TK - 200.000" class="mr-3 text-emerald-500 focus:ring-emerald-500 w-5 h-5">
+                <span class="font-bold">Rp 200.000</span>
+            </label>
+            <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-emerald-50 transition">
+                <input type="radio" name="pilihan_spp" value="TK - 250.000" class="mr-3 text-emerald-500 focus:ring-emerald-500 w-5 h-5">
+                <span class="font-bold">Rp 250.000</span>
+            </label>
+        </div>
+      </div>
+
+      <div id="spp-kb" class="hidden">
+        <p class="mb-4 text-emerald-600 font-semibold">Pilihan SPP untuk kelompok <span class="font-bold underline">KB</span>:</p>
+        <div class="space-y-3">
+            <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-emerald-50 transition">
+                <input type="radio" name="pilihan_spp" value="KB - 100.000" class="mr-3 text-emerald-500 focus:ring-emerald-500 w-5 h-5">
+                <span class="font-bold">Rp 100.000</span>
+            </label>
+            <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-emerald-50 transition">
+                <input type="radio" name="pilihan_spp" value="KB - 150.000" class="mr-3 text-emerald-500 focus:ring-emerald-500 w-5 h-5">
+                <span class="font-bold">Rp 150.000</span>
+            </label>
+        </div>
+      </div>
+      
+      <p id="spp-warning" class="text-red-500 mt-4 hidden">Silakan pilih kelompok pendaftaran di halaman pertama terlebih dahulu.</p>
+    </div>
+
+    <div class="flex justify-between pt-6 border-t mt-6">
+      <button type="button" id="prev-btn" class="hidden px-6 py-2 rounded-full border border-gray-300 text-gray-600 font-semibold hover:bg-gray-100 transition">
+        &larr; Kembali
+      </button>
+      
+      <button type="button" id="next-btn" class="ml-auto bg-green hover:bg-emerald-600 text-white font-bold px-8 py-3 rounded-full shadow-md transition">
+        Selanjutnya &rarr;
+      </button>
+      
+      <button type="submit" id="submit-btn" class="hidden ml-auto bg-green hover:bg-emerald-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transition">
+        Kirim Pendaftaran
+      </button>
+    </div>
+
+    <p id="form-message" class="text-center text-sm font-bold mt-4 hidden"></p>
+
+  </form>
+</div>
+
+<style>
+    .label {
+        @apply block text-sm font-semibold text-gray-700 mb-1;
+    }
+    .input-field {
+        @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-200 outline-none transition;
+    }
+</style>
+
+<script>
+  // LOGIKA MULTI STEP FORM
+  let currentStep = 0;
+  const steps = document.querySelectorAll('.form-step');
+  const progressBar = document.getElementById('progress-bar');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const submitBtn = document.getElementById('submit-btn');
+  const stepLabels = document.querySelectorAll('.step-label');
+
+  // Logic SPP
+  const kelompokSelect = document.getElementById('kelompok-select') as HTMLSelectElement;
+  const sppTkDiv = document.getElementById('spp-tk');
+  const sppKbDiv = document.getElementById('spp-kb');
+  const sppWarning = document.getElementById('spp-warning');
+
+  function showStep(n: number) {
+    // Sembunyikan semua step
+    steps.forEach((step, index) => {
+        step.classList.add('hidden');
+        stepLabels[index]?.classList.remove('text-emerald-600', 'font-bold');
+        stepLabels[index]?.classList.add('text-gray-400');
+    });
+
+    // Tampilkan step saat ini
+    steps[n].classList.remove('hidden');
+    stepLabels[n]?.classList.remove('text-gray-400');
+    stepLabels[n]?.classList.add('text-emerald-600', 'font-bold');
+
+    // Update Progress Bar
+    const progressPercent = ((n + 1) / steps.length) * 100;
+    if (progressBar) progressBar.style.width = `${progressPercent}%`;
+
+    // Tombol Navigasi
+    if (prevBtn) prevBtn.style.display = n === 0 ? 'none' : 'inline-block';
+    
+    if (n === steps.length - 1) {
+        if(nextBtn) nextBtn.classList.add('hidden');
+        if(submitBtn) submitBtn.classList.remove('hidden');
+        
+        // Cek SPP saat masuk step terakhir
+        handleSppDisplay();
+    } else {
+        if(nextBtn) {
+            nextBtn.classList.remove('hidden');
+            nextBtn.innerHTML = 'Selanjutnya &rarr;';
+        }
+        if(submitBtn) submitBtn.classList.add('hidden');
+    }
+  }
+
+  function handleSppDisplay() {
+      const selectedKelompok = kelompokSelect.value;
+      if (sppTkDiv && sppKbDiv && sppWarning) {
+          sppTkDiv.classList.add('hidden');
+          sppKbDiv.classList.add('hidden');
+          sppWarning.classList.add('hidden');
+
+          if (selectedKelompok === 'TK') {
+              sppTkDiv.classList.remove('hidden');
+          } else if (selectedKelompok === 'KB') {
+              sppKbDiv.classList.remove('hidden');
+          } else {
+              sppWarning.classList.remove('hidden');
+          }
+      }
+  }
+
+  function validateForm() {
+    // Validasi input di step yang sedang aktif saja
+    const currentStepDiv = steps[currentStep];
+    const inputs = currentStepDiv.querySelectorAll('input[required], select[required]');
+    let valid = true;
+
+    inputs.forEach((input: any) => {
+        if (!input.value) {
+            valid = false;
+            input.classList.add('border-red-500');
+            // Shake effect simple
+            setTimeout(() => input.classList.remove('border-red-500'), 2000);
+        }
+    });
+
+    return valid;
+  }
+
+  // Event Listeners Navigasi
+  if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+          if (validateForm()) {
+              currentStep++;
+              showStep(currentStep);
+              window.scrollTo(0, 0); // Scroll ke atas
+          } else {
+              alert("Mohon lengkapi data sebelum lanjut.");
+          }
+      });
+  }
+
+  if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+          currentStep--;
+          showStep(currentStep);
+          window.scrollTo(0, 0);
+      });
+  }
+
+  // Initial Show
+  showStep(currentStep);
+
+
+  // --- LOGIKA SUBMIT SEPERTI SEBELUMNYA ---
+  const form = document.getElementById('multi-step-form') as HTMLFormElement;
+  const messageEl = document.getElementById('form-message');
+
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Cek validasi step terakhir (SPP wajib dipilih)
+      const selectedSpp = document.querySelector('input[name="pilihan_spp"]:checked');
+      if (!selectedSpp) {
+          alert("Mohon pilih nominal SPP terlebih dahulu.");
+          return;
+      }
+      
+      if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Sedang Mengirim...';
+          submitBtn.classList.add('opacity-70', 'cursor-not-allowed');
+      }
+
+      const scriptURL = form.action;
+      
+      fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form)
+      })
+      .then(response => {
+        // if(messageEl) {
+        //     messageEl.classList.remove('hidden', 'text-red-500');
+        //     messageEl.classList.add('text-emerald-600');
+        //     messageEl.innerText = "✅ Pendaftaran Berhasil Dikirim! Admin akan segera menghubungi Anda.";
+        // }
+        window.location.href = "/registration-success";
+        form.reset();
+        currentStep = 0;
+        showStep(0);
+        
+        if(submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Kirim Pendaftaran';
+            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+        }
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        if(messageEl) {
+            messageEl.classList.remove('hidden', 'text-emerald-600');
+            messageEl.classList.add('text-red-500');
+            messageEl.innerText = "Terjadi kesalahan koneksi. Silakan coba lagi.";
+        }
+        if(submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Coba Lagi';
+            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+        }
+      });
+    });
+  }
+</script>
