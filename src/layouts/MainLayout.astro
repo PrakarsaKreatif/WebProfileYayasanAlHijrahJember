@@ -24,8 +24,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
       <title>{title} | Yayasan Al-Hijrah Jember</title>
       <meta name="description" content={description}>
       <link rel="canonical" href={canonicalURL}>
+      <meta name="author" content="KB TK Al Hijrah Jember">
+      <meta name="keywords" content="KB TK Al Hijrah, KB TK Al Hijrah, Jember, TK Jember, KB Jember, Sekolah">
       <meta name="robots" content="index, follow">
-      <meta name="author" content="KB TK Al Hijrah">
 
       <meta property="og:type" content={type}>
       <meta property="og:url" content={canonicalURL} />
