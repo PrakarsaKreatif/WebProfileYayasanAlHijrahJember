@@ -4,8 +4,8 @@ import Footer from '../components/common/Footer.astro';
 import '../styles/global.css';
 
 const { 
-   title = "Yayasan Al-Hijrah", 
-   description = "Website Resmi Yayasan KB TK Al-Hijrah Jember. Lembaga pendidikan Islam yang mencetak generasi Qurani, berakhlak mulia, dan berprestasi.",
+   title = "KB TK Al Hijrah", 
+   description = "KB TK Al Hijrah Jember. Lembaga pendidikan Islam yang mencetak generasi Qurani, berakhlak mulia, dan berprestasi.",
    image = "../assets/images/hut_ri.jpg",
    type = "website"
 } = Astro.props;
@@ -25,6 +25,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
       <meta name="description" content={description}>
       <link rel="canonical" href={canonicalURL}>
       <meta name="robots" content="index, follow">
+      <meta name="author" content="KB TK Al Hijrah">
 
       <meta property="og:type" content={type}>
       <meta property="og:url" content={canonicalURL} />
