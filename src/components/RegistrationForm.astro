@@ -1,5 +1,17 @@
 ---
-// src/components/RegistrationForm.astro
+import user from '../../src/assets/icons/icon_user.svg';
+import card from '../../src/assets/icons/icon_card.svg';
+import mandiri from '../../src/assets/icons/logo_bank_mandiri.svg'
+import bri from '../../src/assets/icons/logo_bank_bri.svg'
+import date from '../../src/assets/icons/calendar.svg'
+import form from '../../src/assets/icons/document.svg'
+
+const i_user = user.src;
+const i_card = card.src
+const i_mandiri = mandiri.src
+const i_bri = bri.src
+const i_date = date.src
+const i_form = form.src
 ---
 
 <div class="max-w-4xl mx-auto bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-emerald-100">
@@ -22,7 +34,9 @@
   <form 
     id="multi-step-form"
     method="POST"
-    action="https://script.google.com/macros/s/AKfycbyebRFPu_xHu9gA3aNPmnWjArRmeaJlDmnabBV5z8YQjdlMMFW60qGZR433hIA3jbg1/exec" 
+    action="https://script.google.com/macros/s/AKfycby2NmngHfCFEUSnQJwuqvOyhwPhXv8zKM3QoZIX3kM6CFrp7iCJqrpQOzY7nwZhKSe1/exec" 
+
+    
     class="space-y-6"
   >
 
@@ -267,6 +281,145 @@
       </div>
       
       <p id="spp-warning" class="text-red-500 mt-4 hidden">Silakan pilih kelompok pendaftaran di halaman pertama terlebih dahulu.</p>
+
+      <div class="mt-8">
+  <h3 class="text-lg font-bold text-gray-800 mb-3">Biaya Pendaftaran</h3>
+  
+  <div class="bg-[#E6F7F1] p-6 rounded-3xl border border-emerald-100">
+    
+    <div class="mb-6">
+      <h4 id="wave-title" class="text-emerald-600 font-bold text-lg mb-2">Biaya Pendaftaran Gelombang 1</h4>
+      <div class="space-y-2 text-sm md:text-base font-medium text-gray-600">
+        <div class="flex items-center gap-2">
+          <img src={i_date} alt="tanggal pendaftaran">
+          <span id="wave-date">Desember 2025 s/d Februari 2026</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <img src={i_form} alt="formulir pendaftaran">
+          <span id="wave-fee" class="font-bold text-emerald-700">Biaya Formulir Pendaftaran Rp 50.000</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-emerald-500 rounded-2xl p-6 text-white mb-6">
+      <p class="font-semibold mb-4 text-center md:text-left">Biaya pendaftaran dapat dibayarkan melalui :</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="bg-white text-gray-800 p-4 rounded-xl shadow-sm relative group">
+          <div class="h-8 mb-3 flex items-center">
+            <img src={i_mandiri} alt="pembayaran melalui bank mandiri">
+          </div>
+          <div class="space-y-1 text-sm">
+            <div class="flex items-center gap-2">
+              <img src={i_user} alt="nama rekening">
+              <span class="font-bold">Inge Marinda Prihartini</span>
+            </div>
+            <div class="block items-center gap-2 justify-between">
+               <div class="flex items-center gap-2">
+                 <img src={i_card} alt="nomor rekening">
+                 <span class="font-mono text-base font-bold tracking-wide">1430013310857</span>
+               </div>
+               <button type="button" onclick="copyText('1430013310857')" class=" mt-2 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold py-1 px-3 rounded-full transition">
+                 Copy
+               </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white text-gray-800 p-4 rounded-xl shadow-sm relative group">
+          <div class="h-8 mb-3 flex items-center">
+             <div class="flex items-center gap-1">
+               <img src={i_bri} alt="pembayaran melalui bank bri">
+             </div>
+          </div>
+          <div class="space-y-1 text-sm">
+            <div class="flex items-center gap-2">
+              <img src={i_user} alt="nama rekening">
+              <span class="font-bold">Inge Marinda Prihartini</span>
+            </div>
+            <div class="block items-center gap-2 justify-between">
+               <div class="flex items-center gap-2">
+                 <img src={i_card} alt="nomor rekening">
+                 <span class="font-mono text-base font-bold tracking-wide">087201039480535</span>
+               </div>
+               <button type="button" onclick="copyText('087201039480535')" class="mt-2 bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold py-1 px-3 rounded-full transition">
+                 Copy
+               </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div>
+      <h4 class="text-emerald-600 font-bold mb-2">Upload Bukti Pembayaran</h4>
+      <input 
+        type="file" 
+        id="input-bukti" 
+        name="bukti_pembayaran"
+        accept="image/*,application/pdf"
+        class="block w-full text-sm text-gray-500
+          file:mr-4 file:py-2 file:px-4
+          file:rounded-full file:border-0
+          file:text-sm file:font-semibold
+          file:bg-white file:text-emerald-700
+          file:border-emerald-200 file:border
+          hover:file:bg-emerald-50
+          border border-gray-300 rounded-lg p-2 bg-white"
+      />
+      <p class="text-xs text-gray-500 mt-1 ml-1">*Format: JPG, PNG, atau PDF. Maks 5MB.</p>
+    </div>
+
+  </div>
+</div>
+<script is:inline>
+  // FUNGSI COPY TEXT (Untuk No Rekening)
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      alert("Nomor Rekening berhasil disalin!");
+    }).catch(err => {
+      console.error('Gagal menyalin: ', err);
+    });
+  }
+
+  // FUNGSI CEK TANGGAL OTOMATIS
+  function updateWaveInfo() {
+    const today = new Date();
+    // testing
+    // const today = new Date('2026-03-15'); 
+
+    const waveTitle = document.getElementById('wave-title');
+    const waveDate = document.getElementById('wave-date');
+    const waveFee = document.getElementById('wave-fee');
+
+    // Gelombang 1
+    const wave1Start = new Date('2025-12-01');
+    const wave1End = new Date('2026-02-28');
+    
+    // Gelombang 2
+    const wave2Start = new Date('2026-03-01');
+    const wave2End = new Date('2026-06-30');
+
+    if (today >= wave2Start) {
+      // Masuk Gelombang 2 (
+      waveTitle.innerText = "Biaya Pendaftaran Gelombang 2";
+      waveTitle.className = "text-emerald-600 font-bold text-lg mb-2"; 
+      waveDate.innerText = "Maret 2026 s/d Juni 2026";
+      waveFee.innerText = "Biaya Formulir Pendaftaran Rp 100.000";
+    } else {
+      // Masih Gelombang 1 
+      waveTitle.innerText = "Biaya Pendaftaran Gelombang 1";
+      waveTitle.className = "text-emerald-600 font-bold text-lg mb-2";
+      waveDate.innerText = "Desember 2025 s/d Februari 2026";
+      waveFee.innerText = "Biaya Formulir Pendaftaran Rp 50.000";
+    }
+  }
+
+ 
+  document.addEventListener('DOMContentLoaded', updateWaveInfo);
+</script>
     </div>
 
     <div class="flex justify-between pt-6 border-t mt-6">
@@ -298,7 +451,6 @@
 </style>
 
 <script>
-  // LOGIKA MULTI STEP FORM
   let currentStep = 0;
   const steps = document.querySelectorAll('.form-step');
   const progressBar = document.getElementById('progress-bar');
@@ -307,24 +459,28 @@
   const submitBtn = document.getElementById('submit-btn');
   const stepLabels = document.querySelectorAll('.step-label');
 
-  // Logic SPP
-  const kelompokSelect = document.getElementById('kelompok-select') as HTMLSelectElement;
+  //  SPP
+  const kelompokSelect = document.getElementById('kelompok-select');
   const sppTkDiv = document.getElementById('spp-tk');
   const sppKbDiv = document.getElementById('spp-kb');
   const sppWarning = document.getElementById('spp-warning');
 
-  function showStep(n: number) {
+  function showStep(n) {
     // Sembunyikan semua step
     steps.forEach((step, index) => {
         step.classList.add('hidden');
-        stepLabels[index]?.classList.remove('text-emerald-600', 'font-bold');
-        stepLabels[index]?.classList.add('text-gray-400');
+        if(stepLabels[index]) {
+            stepLabels[index].classList.remove('text-emerald-600', 'font-bold');
+            stepLabels[index].classList.add('text-gray-400');
+        }
     });
 
     // Tampilkan step saat ini
     steps[n].classList.remove('hidden');
-    stepLabels[n]?.classList.remove('text-gray-400');
-    stepLabels[n]?.classList.add('text-emerald-600', 'font-bold');
+    if(stepLabels[n]) {
+        stepLabels[n].classList.remove('text-gray-400');
+        stepLabels[n].classList.add('text-emerald-600', 'font-bold');
+    }
 
     // Update Progress Bar
     const progressPercent = ((n + 1) / steps.length) * 100;
@@ -336,8 +492,6 @@
     if (n === steps.length - 1) {
         if(nextBtn) nextBtn.classList.add('hidden');
         if(submitBtn) submitBtn.classList.remove('hidden');
-        
-        // Cek SPP saat masuk step terakhir
         handleSppDisplay();
     } else {
         if(nextBtn) {
@@ -366,20 +520,17 @@
   }
 
   function validateForm() {
-    // Validasi input di step yang sedang aktif saja
     const currentStepDiv = steps[currentStep];
     const inputs = currentStepDiv.querySelectorAll('input[required], select[required]');
     let valid = true;
 
-    inputs.forEach((input: any) => {
+    inputs.forEach((input) => {
         if (!input.value) {
             valid = false;
             input.classList.add('border-red-500');
-            // Shake effect simple
             setTimeout(() => input.classList.remove('border-red-500'), 2000);
         }
     });
-
     return valid;
   }
 
@@ -389,7 +540,7 @@
           if (validateForm()) {
               currentStep++;
               showStep(currentStep);
-              window.scrollTo(0, 0); // Scroll ke atas
+              window.scrollTo(0, 0);
           } else {
               alert("Mohon lengkapi data sebelum lanjut.");
           }
@@ -408,21 +559,23 @@
   showStep(currentStep);
 
 
-  // --- LOGIKA SUBMIT SEPERTI SEBELUMNYA ---
-  const form = document.getElementById('multi-step-form') as HTMLFormElement;
+  const form = document.getElementById('multi-step-form');
+  // Casting ke HTMLInputElement 
+  const fileInput = document.getElementById('input-bukti'); 
   const messageEl = document.getElementById('form-message');
 
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       
-      // Cek validasi step terakhir (SPP wajib dipilih)
+      // Validasi SPP
       const selectedSpp = document.querySelector('input[name="pilihan_spp"]:checked');
       if (!selectedSpp) {
           alert("Mohon pilih nominal SPP terlebih dahulu.");
           return;
       }
       
+      // UI Loading
       if (submitBtn) {
           submitBtn.disabled = true;
           submitBtn.innerHTML = 'Sedang Mengirim...';
@@ -430,41 +583,54 @@
       }
 
       const scriptURL = form.action;
-      
-      fetch(scriptURL, { 
-        method: 'POST', 
-        body: new FormData(form)
-      })
-      .then(response => {
-        // if(messageEl) {
-        //     messageEl.classList.remove('hidden', 'text-red-500');
-        //     messageEl.classList.add('text-emerald-600');
-        //     messageEl.innerText = "✅ Pendaftaran Berhasil Dikirim! Admin akan segera menghubungi Anda.";
-        // }
-        window.location.href = "/registration-success";
-        form.reset();
-        currentStep = 0;
-        showStep(0);
+      const formData = new FormData(form);
+    
+      // pengiriman data tunggal
+      const sendData = () => {
+        fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+            window.location.href = "/registration-success";
+            form.reset();
+        })
+        .catch(error => {
+            // Error Handling
+            console.error('Error!', error.message);
+            if(messageEl) {
+                messageEl.classList.remove('hidden');
+                messageEl.classList.add('text-red-500');
+                messageEl.innerText = "Terjadi kesalahan koneksi: " + error.message;
+            }
+            if(submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Coba Lagi';
+                submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+            }
+        });
+      };
+
+      if (fileInput && fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
         
-        if(submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Kirim Pendaftaran';
-            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-        }
-      })
-      .catch(error => {
-        console.error('Error!', error.message);
-        if(messageEl) {
-            messageEl.classList.remove('hidden', 'text-emerald-600');
-            messageEl.classList.add('text-red-500');
-            messageEl.innerText = "Terjadi kesalahan koneksi. Silakan coba lagi.";
-        }
-        if(submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = 'Coba Lagi';
-            submitBtn.classList.remove('opacity-70', 'cursor-not-allowed');
-        }
-      });
+        reader.onload = function(e) {
+            const result = e.target.result;
+            // Ambil base64 
+            const content = result.split(',')[1]; 
+            
+            // Tambahkan data file ke FormData
+            formData.append('file_content', content);
+            formData.append('file_mime', file.type);
+            formData.append('file_name', file.name);
+            
+            sendData();
+        };
+        
+        reader.readAsDataURL(file);
+      } else {
+        sendData();
+      }
+      
+
     });
   }
 </script>
