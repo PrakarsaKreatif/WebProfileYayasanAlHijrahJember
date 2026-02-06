@@ -1,6 +1,7 @@
 ---
 import Navbar from '../components/common/Navbar.astro';
 import Footer from '../components/common/Footer.astro';
+import ChatWidget from '../components/ChatWidget.astro';
 import '../styles/global.css';
 
 const { 
@@ -59,6 +60,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
 
       <main class="flex-grow w-full">
          <slot />
+         <ChatWidget />
       </main>
 
        <div class="w-full bg-white border-t mt-auto">
