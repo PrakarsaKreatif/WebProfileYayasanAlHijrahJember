@@ -14,10 +14,10 @@ const imageFiles = import.meta.glob('/src/assets/images/*.{jpeg,jpg,png,webp}', 
 const bannerImages = Object.values(imageFiles).map((img: any) => img.default.src);
 ---
 
-<Layout title={pageTitle}>
+<Layout title="Prestasi Siswa KB TK Al-Hijrah Jember">
     <section class="max-w-4xl mx-auto pt-12 pb-12 text-center px-4 md:px-6">
         <PageBanner 
-            title="Galeri Kegiatan Kami" 
+            title="Galeri Prestasi Kami" 
             images={bannerImages}
         />
 

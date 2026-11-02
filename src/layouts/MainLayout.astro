@@ -7,7 +7,7 @@ import '../styles/global.css';
 const { 
    title = "KB TK Al Hijrah", 
    description = "KB TK Al Hijrah Jember. Lembaga pendidikan Islam yang mencetak generasi Qurani, berakhlak mulia, dan berprestasi.",
-   image = "../assets/images/hut_ri.jpg",
+   image = "/images/hut_ri.jpg",
    type = "website"
 } = Astro.props;
 
@@ -27,14 +27,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
       <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
       <link rel="canonical" href={canonicalURL}>
       <meta name="author" content="KB TK Al Hijrah Jember">
-      <meta name="keywords" content="KB TK Al Hijrah, KB TK Al Hijrah, Jember, TK Jember, KB Jember, Sekolah">
+      <meta name="keywords" content="KB TK Al Hijrah,Yayasan KB TK Al Hijrah, Jember, TK Jember, KB Jember, Sekolah TK di Jember">
       <meta name="robots" content="index, follow">
 
       <meta property="og:type" content={type}>
       <meta property="og:url" content={canonicalURL} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={new URL(image, Astro.url)} />
+      <meta property="og:image" content={new URL(image, Astro.site || Astro.url.origin)} />
       <meta property="og:site_name" content="Yayasan Al-Hijrah Jember" />
       <meta property="og:locale" content="id_ID" />
 
@@ -53,9 +53,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || Astro.url.origin)
    <body class="flex flex-col min-h-screen bg-[#FFFFFF] text-gray-900 font-poppins">
       
       <div class="w-full bg-white shadow-sm sticky top-0 z-50">
-         <container>
+         <div class="mx-auto">
             <Navbar />
-         </container>
+         </div>
       </div>
 
       <main class="flex-grow w-full">
